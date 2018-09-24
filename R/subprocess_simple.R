@@ -67,7 +67,7 @@ subprocess_simple <- function(script_paths, working_directory, process_limit = 3
                                                                   x$c_handle, as.integer(NA))}),
                       free = sapply(slots, function(x){ifelse(subprocess::is_process_handle(x),
                                                               F, T)})
-    )
+    , stringsAsFactors = F)
     )}
   # Function: Print std out
   slots_read <- function(){
@@ -79,7 +79,7 @@ subprocess_simple <- function(script_paths, working_directory, process_limit = 3
   # Data sets used during loop
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   results <- data.frame() # Save results.
-  scripts <- data.frame(script_paths = script_paths, working_directory = working_directory) # Scripts to loop through.
+  scripts <- data.frame(script_paths = script_paths, working_directory = working_directory, stringsAsFactors = F) # Scripts to loop through.
   slots <- vector("list", length = process_limit) # The vector of process slots.
   starttime <- Sys.time() # Timeout counter started here!
 
