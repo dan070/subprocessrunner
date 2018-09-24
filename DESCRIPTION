@@ -1,6 +1,6 @@
 Package: subprocessrunner
 Title: Run Parallell R (Sub)processes Within R Concurrently
-Version: 0.0.0.9000
+Version: 0.0.1.0000
 Authors@R: person("Dan", "Gustafsson", email = "dan0704090017@hotmail.com", role = c("aut", "cre"))
 Description: Runs R-scripts using 'subprocess' package, for convenience.
 Depends: R (>= 3.4.2)

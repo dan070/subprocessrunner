@@ -2,15 +2,15 @@
 #'
 #' `subprocess_simple` runs scripts in multiple processes but without duplicates.
 #'
-#' R scripts are run using Rscript.exe. Only one script with the same name, can run in parallell.
-#' Duplicates will be finished one at a time. Print-out from processes will carry a
-#' small time penalty when running.
-#' Always end the scripts with "quit(save = 'no')" .
+#' R scripts are run using Rscript.exe. Only one script with the same name, can run at a time.
+#' All scripts that have different names will run in parallell, with a maximum of \code{process_limit} scripts.
+#' Print-out of stdin and stderr from each process carries a small time penalty.
+#' NB: Always end the scripts with "quit(save = 'no')" !
 #'
 #' @param script_paths (character) Paths to R-scripts.
 #' @param working_directory (character) Working directory for scripts. Recycled if neccessary.
 #' @param process_limit (integer) Number of processes to run in parallell (i.e. Rscript.exe instances).
-#' @param overall_timeout (integer) Maximum run time for all scripts. Then kills all processes and exits.
+#' @param overall_timeout (integer) Maximum run time minutes for all scripts, after that it kills all processes.
 #' @param print_stdout (logical) Print standard out from process?
 #' @param print_stderr (logical) Print standard error from process?
 #' @param debuglevel (integer) Print debug messages, 0 (nothing) to 3 (maximum).
